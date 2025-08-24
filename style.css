@@ -1,34 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
+* {
     font-family: "Be Vietnam Pro", sans-serif;
     box-sizing: border-box;
 }
 
-body{
+body {
     padding: 0;
     margin: 0;
     height: 100vh;
     background-color: #eee;
 }
 
-h1{
+h1 {
     font-size: 3em;
     text-align: center;
 }
-h4{
+h4 {
     margin-top: -10px;
     text-align: center;
     letter-spacing: 10px;
 }
 
-#div-inp{
-    width:100%;
+#div-inp {
+    width: 100%;
     max-width: 1080px;
     margin: auto;
 }
 
-.cls-center{
+.cls-center {
     border-style: none;
     display: block;
     margin: 0 auto;
@@ -36,12 +36,12 @@ h4{
     border-radius: 20px;
 }
 
-#inp-link{
+#inp-link {
     margin-top: 50px;
     width: 55%;
 }
 
-#btn-submit{
+#btn-submit {
     width: 40%;
     color: #eee;
     font-size: 1em;
@@ -49,15 +49,49 @@ h4{
     background-color: #31105c;
     transition: all 0.4s ease-in-out;
 }
-#btn-submit:hover{
+#btn-submit:hover {
     cursor: pointer;
     letter-spacing: 1em;
     width: 42%;
     background-color: #6e3aaa;
 }
 
+/* QR Section */
+#qr-section {
+    margin: 5% auto;
+    text-align: center;
+    display: none; /* hidden before generating */
+}
+
+#qrcode {
+    background-color: #fff;
+    padding: 20px;  /* white border */
+    border-radius: 20px; /* rounded container */
+    display: inline-block;
+}
+
+/* Download button */
+#btn-download {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-weight: 700;
+    background-color: #31105c;
+    color: #eee;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+#btn-download:hover {
+    background-color: #6e3aaa;
+    letter-spacing: 0.2em;
+}
+
 @media (max-width: 768px) {
-    #inp-link{
+    h4{
+        letter-spacing: 5px;
+    }
+    #inp-link {
         width: 90%;
         padding: 4%;
     }
