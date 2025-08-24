@@ -6,8 +6,7 @@
 }
 
 body {
-    margin: 0;
-    min-height: 100vh;       /* allows scrolling */
+    margin: 0;      /* allows scrolling */
     overflow-y: auto;         /* enable vertical scroll */
     overflow-x: hidden;       /* hide horizontal scroll */
     position: relative;
@@ -63,7 +62,7 @@ h1, h4{
     color: #31105c;
 }
 h1 {
-    margin-top: 3em;
+    margin-top: 1em;
     font-size: 3em;
     text-align: center;
     transition: all 0.4s ease-in-out;
