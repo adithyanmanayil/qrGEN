@@ -6,10 +6,55 @@
 }
 
 body {
-    padding: 0;
     margin: 0;
     height: 100vh;
-    background-color: #eee;
+    overflow: hidden;
+    position: relative;
+
+    /* Animated gradient background */
+    background: #d6d6d6;
+    background-size: 400% 400%;
+    animation: gradientShift 12s ease infinite;
+}
+
+/* Moving grid overlay */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(rgba(0,0,0,0.15) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(0,0,0,0.15) 2px, transparent 2px);
+    background-size: 150px 150px;
+
+    animation: gridMove 10s linear infinite;
+    mix-blend-mode: overlay;
+
+    pointer-events: none; /* let clicks go through */
+    z-index: 0;
+}
+
+/* Animate gradient background */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Animate grid lines moving diagonally */
+@keyframes gridMove {
+    0% { background-position: 0 0, 0 0; }
+    50% { background-position: 75px 75px, 75px 75px; }
+    100% { background-position: 0 0, 0 0; }
+}
+
+/* Main content layering */
+#main {
+    position: relative;
+    z-index: 1; /* above the grid overlay */
+    max-width: 1080px;
+    margin: auto;
 }
 
 h1 {
@@ -28,7 +73,7 @@ h4 {
     margin: auto;
 }
 
-.cls-center {
+.cls-center, .btn{
     border-style: none;
     display: block;
     margin: 0 auto;
@@ -39,6 +84,7 @@ h4 {
 #inp-link {
     margin-top: 50px;
     width: 55%;
+    background-color: #f8f8f8;
 }
 
 #btn-submit {
@@ -70,6 +116,12 @@ h4 {
     display: inline-block;
 }
 
+input:focus,
+button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
 /* Download button */
 #btn-download {
     margin-top: 20px;
@@ -93,6 +145,11 @@ h4 {
     }
     #inp-link {
         width: 90%;
-        padding: 4%;
+        height: 50px;
+        padding: 4% 8%;
+    }
+    .btn, #btn-submit{
+        width: 80%;
+        padding: 3%;
     }
 }
