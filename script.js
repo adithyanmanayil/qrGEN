@@ -1,12 +1,12 @@
 // Create QRCodeStyling instance
 const qrCode = new QRCodeStyling({
-    width: 250,
-    height: 250,
-    margin: 20, // white border inside QR
+    width: 1080,       // high-res for download
+    height: 1080,
+    margin: 20,
     type: "png",
     dotsOptions: {
         color: "#000",
-        type: "rounded" // smooth rounded QR
+        type: "rounded"
     },
     backgroundOptions: {
         color: "#ffffff"
@@ -20,20 +20,27 @@ const qrDiv = document.getElementById("qrcode");
 const btnDownload = document.getElementById("btn-download");
 
 // Handle form submit
+// Hide QR section initially
+qrSection.style.display = "none";
+
 form.addEventListener("submit", function(e) {
     e.preventDefault();
     const url = input.value.trim();
-    if (url) {
-        qrCode.update({ data: url });
+    if (!url) return;
 
-        // Clear old QR if exists
-        qrDiv.innerHTML = "";
-        qrCode.append(qrDiv);
+    // Update QR code
+    qrCode.update({ data: url });
 
-        // Show QR section
-        qrSection.style.display = "block";
-    }
+    // Clear previous QR canvas
+    qrDiv.innerHTML = "";
+
+    // Append new QR canvas
+    qrCode.append(qrDiv);
+
+    // Show QR section
+    qrSection.style.display = "flex";
 });
+
 
 // Handle download
 btnDownload.addEventListener("click", () => {
