@@ -1,19 +1,23 @@
 <!Doctype html>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>qrGEN</title>
+        <meta charset = "utf-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <!--Style-->
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
         <div id="main">
-            <h2 id="mainheading">QR Code Generator</h2>
             
-            <div id="mainbox">
-                <form method="POST">
-                    <label>LINK</label>
-                    <input type="text" id="link" name="link">
-                    <input type="submit" value="SUBMIT">
+            <h1 id="mainheading">qrGEN
+                <h4>QR CODE GENERATOR</h4>
+            </h1>
+            <div id="div-inp">
+                <form name="form-inp" method="GET">
+                    <input type="text" id="inp-link" class="cls-center" placeholder="Enter Link Here!"><br>
+                    <input type="submit" id="btn-submit" class="cls-center" value="CONVERT">
                 </form>
             </div>
         
