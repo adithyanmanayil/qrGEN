@@ -152,4 +152,8 @@ button:focus {
         width: 80%;
         padding: 3%;
     }
+    #btn-submit:hover{
+        width: 90%;
+        letter-spacing: 0.5em
+    }
 }
