@@ -9,11 +9,7 @@ body{
     padding: 0;
     margin: 0;
     height: 100vh;
-  background-color: #eee; /* base color */
-  background-image: 
-    linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
-  background-size: 40px 40px; /* size of each grid square */
+    background-color: #eee;
 }
 
 h1{
@@ -33,9 +29,11 @@ h4{
 }
 
 .cls-center{
+    border-style: none;
     display: block;
     margin: 0 auto;
-    padding: 2%;
+    padding: 2% 4%;
+    border-radius: 20px;
 }
 
 #inp-link{
@@ -44,10 +42,18 @@ h4{
 }
 
 #btn-submit{
-    width: 45%;
+    width: 40%;
+    color: #eee;
+    font-size: 1em;
+    font-weight: 800;
+    background-color: #31105c;
+    transition: all 0.4s ease-in-out;
 }
 #btn-submit:hover{
     cursor: pointer;
+    letter-spacing: 1em;
+    width: 42%;
+    background-color: #6e3aaa;
 }
 
 @media (max-width: 768px) {
